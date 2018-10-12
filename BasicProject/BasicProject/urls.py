@@ -3,12 +3,13 @@ Definition of urls for BasicProject.
 """
 
 from django.conf.urls import include, url
+import HelloDjangoApp.views
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = [
+#urlpatterns = [
     # Examples:
     # url(r'^$', BasicProject.views.home, name='home'),
     # url(r'^BasicProject/', include('BasicProject.BasicProject.urls')),
@@ -18,4 +19,10 @@ urlpatterns = [
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+#]
+
+# Django processes URL patterns in the order they appear in the array
+urlpatterns = [
+url(r'^$', HelloDjangoApp.views.index, name='index'),
+url(r'^home$', HelloDjangoApp.views.index, name='home'),
 ]
